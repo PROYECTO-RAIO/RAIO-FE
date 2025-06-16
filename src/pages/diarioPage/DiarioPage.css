@@ -1,0 +1,10 @@
+.title-container{
+    display: flex;
+    height:25vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.title{
+    font-size: 4rem;
+}

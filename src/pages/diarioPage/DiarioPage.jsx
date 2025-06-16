@@ -5,8 +5,8 @@ function DiarioPage(){
     return(
 
         <>
-        <div>
-            <h1>DIARIO</h1>
+        <div className="title-container">
+            <h1 className="title">DIARIO</h1>
         </div>
 
         <CardMensaje/>

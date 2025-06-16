@@ -5,7 +5,7 @@ import './CardMensaje.css'
 function CardMensaje(){
     return(
         <div className='card-container'>
-            <p> Yo creo en la supremacía de los gatos</p>
+            <p className='text'> YO CREO EN LA SUPREMACÍA GATUNA</p>
         </div>
         
     );
