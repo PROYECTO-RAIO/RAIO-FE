@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import DiarioPage from "./pages/diarioPage/DiarioPage"
+import { Route, Routes } from 'react-router-dom'
+import ReverbPage from './pages/ReverbPage'
+import DiarioPage from './pages/diarioPage/DiarioPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <DiarioPage/>
-      
+     <Routes>
+
+      <Route path='/reverberacions' element={<ReverbPage/>} />  
+      <Route path='/diari' element={<DiarioPage/>} /> 
+
+     </Routes>
     </>
   )
 }
