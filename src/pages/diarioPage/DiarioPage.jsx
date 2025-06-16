@@ -5,6 +5,10 @@ function DiarioPage(){
     return(
 
         <>
+        <div>
+            <h1>DIARIO</h1>
+        </div>
+
         <CardMensaje/>
         </>
     );
