@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import ReverbPage from './pages/ReverbPage'
+import ReverbPage from './pages/ReverbPage/ReverbPage'
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
     <>
      <Routes>
 
-      <Route path='/reverberacions' element={<ReverbPage/>} />  
+      <Route path='/reverberacions' element={<ReverbPage />} />  
 
 
      </Routes>

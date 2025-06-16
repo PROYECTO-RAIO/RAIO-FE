@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ReverbPage.css"
-import filterIcon from "../assets/lupa.png";
+import filterIcon from "../../assets/lupa.png";
 
 function ReverbPage() {
   return (
