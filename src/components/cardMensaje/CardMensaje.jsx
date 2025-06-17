@@ -1,14 +1,18 @@
-import './CardMensaje.css'
-//import { useState } from 'react';
+import React from 'react';
+import './CardMensaje.css';
 
+function CardMensaje({ mensajeOriginal }) {
+  if (!mensajeOriginal) {
+    return null;
+  }
 
-function CardMensaje(){
-    return(
-        <div className='card-container'>
-            <p className='text'> YO CREO EN LA SUPREMACÍA GATUNA</p>
-        </div>
-        
-    );
+  return (
+    <div className='card-container'>
+      <p className='text'>
+        {mensajeOriginal.cuerpoMensajeOriginal}
+      </p>
+    </div>
+  );
 }
 
-export default CardMensaje
+export default CardMensaje;
