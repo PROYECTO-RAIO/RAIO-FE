@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "./Button.css";
-import { type } from "os";
 
 function Button({ text, to, type = "button", className = "" }) {
   const navigate = useNavigate();
