@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
 import ReverbPage from "./pages/ReverbPage/ReverbPage";
-import ReverbCard from "./components/ReverbCard/ReverbCard";
 import DiarioPage from "./pages/DiarioPage/DiarioPage";
 
 function App() {
