@@ -4,7 +4,8 @@
   border: none;
   border-radius: 8px; 
   padding: 0.5rem 1.5rem; 
-  font-size: 1rem;
+  font-size: 1rem; 
+  font-family: "DotGothic16", sans-serif; 
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: inline-block;

@@ -1,9 +1,8 @@
-import { Route, Routes } from 'react-router-dom'
-import ReverbPage from './pages/ReverbPage'
-import DiarioPage from './pages/DiarioPage';
+import { Route, Routes } from "react-router-dom";
+import ReverbPage from "./pages/ReverbPage";
+import DiarioPage from "./pages/DiarioPage/DiarioPage";
 
 function App() {
-
   return (
     <>
       <Routes>
@@ -14,4 +13,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
