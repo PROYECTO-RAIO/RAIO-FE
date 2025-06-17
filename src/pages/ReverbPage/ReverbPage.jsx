@@ -16,7 +16,6 @@ function ReverbPage() {
           className="filter-icon"
         />
       </div>
-      <h1 className="reverb-page-title">REVERBERACIONES</h1>
       < ReverbCard />
     </section>
   );
