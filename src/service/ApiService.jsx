@@ -2,15 +2,6 @@ import axios from "axios";
 
 const BASE_URL = "http://localhost:8080/api/v1";
 
-/*GET 
-Mensaje reverberado by id
-Mensaje original by id
-
-GET ALL
-Mensajes originales: página principal
-mensajes reverberados asociados
-*/
-
 export const getAllMensajesReverberados = async () => {
   try {
     const { data } = await axios.get(`${BASE_URL}/mensajes-reverberados`);
