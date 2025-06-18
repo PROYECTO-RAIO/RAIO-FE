@@ -50,4 +50,4 @@ export const getAllMensajesOriginales = async() => {
   } catch (error) {
     console.error("Error al obtener los mensajes originales", error)
   }
-};
+}
