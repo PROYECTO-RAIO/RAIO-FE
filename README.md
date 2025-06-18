@@ -1,12 +1,57 @@
-# React + Vite
+RAIO - Frontend de Usuario
+Reverberacions d'Amor i Odi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Visión General#
+RAIO es una interfaz pública que permite a los usuarios:
 
-Currently, two official plugins are available:
+-Explorar un diario colectivo de mensajes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Descubrir reverberaciones asociadas (ecos creativos como poemas, sonidos o visualizaciones).
 
-## Expanding the ESLint configuration
+-Experimentar una red de conexiones entre los distintos contenidos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Características Principales:
+
+1. Visualización de Contenido
+-Vista de Diario
+
+-Listado cronológico de mensajes.
+
+-Filtros por fecha, autor o palabras clave.
+
+-Visualización de archivos multimedia adjuntos.
+
+-Vista de Reverberaciones
+
+-Galería de ecos creativos (poesía, arte visual, sonidos, etc.).
+
+-Clasificación por tipo de medio.
+
+-Conexiones visuales con los mensajes originales.
+
+2. Experiencia de Usuario
+-Diseño responsive (mobile-first).
+
+-Sistema de internacionalización (i18n).
+
+-Modo lectura accesible.
+
+-Visualización interactiva de relaciones entre contenidos.
+
+#Tecnologías Clave#
+Diagram (visualización de relaciones)
+
+Code (estructura modular de componentes)
+
+
+#React + Vite#
+Este proyecto utiliza una plantilla mínima para configurar React con Vite, incluyendo HMR (Hot Module Replacement) y algunas reglas básicas de ESLint.
+
+Actualmente hay dos plugins oficiales disponibles:
+
+@vitejs/plugin-react: usa Babel para Fast Refresh.
+
+@vitejs/plugin-react-swc: usa SWC para Fast Refresh.
+
+Expansión de la configuración de ESLint
+Si estás desarrollando una aplicación para producción, se recomienda usar TypeScript con reglas de linting que sean conscientes del tipo. Puedes consultar la plantilla oficial de TypeScript para integrar TypeScript y typescript-eslint en tu proyecto.
