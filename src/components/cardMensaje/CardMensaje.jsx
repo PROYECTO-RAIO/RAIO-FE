@@ -1,37 +1,74 @@
-import './CardMensaje.css'
+import './CardMensaje.css';
 import { useState, useEffect } from 'react';
-import { getMensajeOriginalById } from '../../service/ApiService'; 
-import Button from "../Button/Button"
+import { getAllMensajesOriginales } from '../../service/ApiService'; 
+import Button from "../Button/Button";
+import ReverbCard from '../ReverbCard/ReverbCard';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function CardMensaje() {
-  const [mensaje, setMensaje] = useState(null);
+  const [mensajes, setMensajes] = useState([]);
+  const [abierto, setAbierto] = useState(null);
 
   useEffect(() => {
-    const fetchMensaje = async () => {
+    const fetchMensajes = async () => {
       try {
-        const data = await getMensajeOriginalById(3); 
-        setMensaje(data);
+        const data = await getAllMensajesOriginales();
+        setMensajes(data);
       } catch (error) {
-        console.error("Error al cargar el mensaje original", error);
+        console.error("Error al cargar los mensajes originales", error);
       }
     };
 
-    fetchMensaje();
+    fetchMensajes();
   }, []);
 
+  const toggleAcordeon = (id) => {
+    setAbierto((prev) => (prev === id ? null : id));
+  };
+
   return (
-    <div className='card-container'>
-      <p className='text'>
-        {mensaje ? mensaje.cuerpoMensajeOriginal : "Cargando mensaje..."}
-      </p>
-      <Button
-          type="button"
-          className="custom-button"
-          text="Desplegar"
-          to="/reverberacions"
-        />
+    <div className="lista-mensajes">
+      {mensajes.map((mensaje) => (
+        <div key={mensaje.id} className="card-container">
+          <p className="text">{mensaje.cuerpoMensajeOriginal}</p>
+
+          <Button
+            type="button"
+            text={abierto === mensaje.id ? "Ocultar" : "Desplegar"}
+            className="acordeon-button"
+            to={null}
+            onClick={() => toggleAcordeon(mensaje.id)}
+          />
+
+          {abierto === mensaje.id && (
+            <div className="acordeon-content">
+              <ReverbCardWrapper id={mensaje.id} />
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
+
+// function ReverbCardWrapper({ id }) {
+//   // Mock useParams para ReverbCard
+//   const location = useLocation();
+//   const navigate = useNavigate();
+
+//   // Empuja un estado temporal en la URL para que ReverbCard pueda usar useParams
+//   useEffect(() => {
+//     const oldPath = location.pathname;
+//     const fakePath = `/mensaje/${id}`;
+//     window.history.pushState({}, '', fakePath);
+
+//     return () => {
+//       // Restaurar el path anterior al cerrar el acordeón
+//       window.history.pushState({}, '', oldPath);
+//     };
+//   }, [id]);
+
+//   return <ReverbCard />;
+// }
 
 export default CardMensaje;
