@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import filterIcon from "../../assets/lupa.png";
 import "./DiarioPage.css";
+import CardMensaje from "../../components/cardMensaje/CardMensaje";
 
 
 function DiarioPage() {
@@ -16,8 +17,12 @@ function DiarioPage() {
         </Link>
       </div>
       <h1 className="diario-page-title">DIARIO</h1>
+      <CardMensaje/>
 
     </section>
+
+    
+
   );
 }
 

@@ -1,0 +1,39 @@
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 15vh;
+    width: 85vw;
+    border: 5px solid #1F3BE9;
+    border-radius: 20px;
+    margin-left: 1rem;
+}   
+
+.text {
+    align-self: flex-start;
+}
+
+.custom-button {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    height: 3vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+@media (min-width: 768px) {
+    .card-container {
+        margin-left: 4rem;
+    }
+
+    .custom-button {
+        height: 4vh;
+        width: 10vw;
+    }
+}
