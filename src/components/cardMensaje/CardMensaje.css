@@ -9,7 +9,13 @@
 }   
 
 .text{
-    align-self: center;
+    align-self: flex-start;
+}
+
+.custom-button{
+    height: 4vh;
+    width: 10vw; 
+    align-self: end;      
 }
 
 
@@ -25,8 +31,13 @@
 }   
 
 .text{
-    align-self: center;
+    align-self: flex-start;
 }
 
+.custom-button{
+    height: 4vh;
+    width: 10vw;   
+    align-self: end;  
+}
 
 }

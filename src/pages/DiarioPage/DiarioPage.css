@@ -1,44 +1,46 @@
-.reverb-page-title {
+.diario-page-main {
+  font-family: "DotGothic16", sans-serif;
+  color: #1F3BE9;
+  padding: 0.5rem;
+}
+
+.diario-page-title {
   text-align: center;
   font-size: 4rem;
   margin-top: 5%;
 }
 
-.homepage-link {
-  font-size: 2rem;
-  margin: 2%;
-}
-
-.reverb-page-header {
+.diario-page-header {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end; 
   align-items: center;
+  padding-right: 2rem; 
 }
 
 .filter-icon {
-  margin-right: 3%;
+  margin-right: 0; 
+  width: 40px;
+  height: auto;
 }
 
+
 @media (max-width: 768px) {
-  .reverb-page-title {
+  .diario-page-title {
     font-size: 2.5rem;
     margin-top: 10%;
   }
 
-  .homepage-link {
-    font-size: 1.5rem;
-    margin: 5%;
-  }
-
-  .reverb-page-header {
+  .diario-page-header {
     padding: 0 5%;
   }
 
   .filter-icon {
     width: 24px;
-    /* reduce tamaño si es muy grande */
     height: auto;
     margin-right: 0;
   }
+
+  
 }
