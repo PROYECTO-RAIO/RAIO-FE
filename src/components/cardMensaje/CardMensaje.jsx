@@ -13,7 +13,9 @@ function CardMensaje() {
     const fetchMensajes = async () => {
       try {
         const data = await getAllMensajesOriginales();
-        setMensajes(data);
+         if (data) {
+           setMensajes(data);
+         }
       } catch (error) {
         console.error("Error al cargar los mensajes originales", error);
       }
