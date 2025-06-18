@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getMensajeOriginalById } from "../../service/apiService";
+import { getMensajeOriginalById } from "../../service/ApiService";
 import renderAdjunto from "../../service/RenderAdjunto";
 import "../ReverbCard/ReverbCard.css";
 
