@@ -19,6 +19,9 @@ function DiarioPage() {
       <h1 className="diario-page-title">DIARIO COLECTIVO</h1>
       <CardMensaje />
     </section>
+
+    
+
   );
 }
 
