@@ -51,3 +51,13 @@ Actualmente hay dos plugins oficiales disponibles:
 
 Expansión de la configuración de ESLint
 Si estás desarrollando una aplicación para producción, se recomienda usar TypeScript con reglas de linting que sean conscientes del tipo. Puedes consultar la plantilla oficial de TypeScript para integrar TypeScript y typescript-eslint en tu proyecto.
+
+## 👩‍💻 Equipo del Proyecto RAIO
+
+Este proyecto ha sido desarrollado por un equipo multidisciplinar de mujeres apasionadas por la tecnología:
+
+- [**Kat Leverton**](https://www.linkedin.com/in/kat-leverton/) — Desarrolladora
+- [**Carolina Más**](https://www.linkedin.com/in/carolina-mas/) — Desarrolladora
+- [**Mariona Cuyàs**](https://www.linkedin.com/in/mariona-cuyas/) — Product Owner & Desarrolladora
+- [**Karisha Melendez**](https://www.linkedin.com/in/karisssha/) — Desarrolladora
+- [**Marta Ibarra**](https://www.linkedin.com/in/marta-ibarra-cumbrero/) — Scrum Master & Desarrolladora
