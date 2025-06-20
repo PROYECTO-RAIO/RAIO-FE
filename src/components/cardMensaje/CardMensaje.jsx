@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getAllMensajesOriginales } from '../../service/ApiService'; 
 import Button from "../Button/Button";
 import ReverbCard from '../ReverbCard/ReverbCard';
-import { useNavigate, useLocation } from 'react-router-dom';
+
 
 function CardMensaje() {
   const [mensajes, setMensajes] = useState([]);
@@ -13,6 +13,7 @@ function CardMensaje() {
     const fetchMensajes = async () => {
       try {
         const data = await getAllMensajesOriginales();
+        console.log("Mensajes recibidos:", data);
          if (data) {
            setMensajes(data);
          }
@@ -24,9 +25,10 @@ function CardMensaje() {
     fetchMensajes();
   }, []);
 
-  const toggleAcordeon = (id) => {
+    const toggleAcordeon = (id) => {
     setAbierto((prev) => (prev === id ? null : id));
-  };
+    console.log("Mensajes para renderizar:", mensajes);
+};
 
   return (
     <div className="lista-mensajes">
@@ -35,42 +37,24 @@ function CardMensaje() {
           <p className="text">{mensaje.cuerpoMensajeOriginal}</p>
 
           <Button
-            type="button"
-            text={abierto === mensaje.id ? "Ocultar" : "Desplegar"}
-            className="acordeon-button"
-            to={null}
-            onClick={() => toggleAcordeon(mensaje.id)}
-          />
+  text={abierto === mensaje.id ? "Ocultar" : "Ver"}
+  onClick={() => {
+    console.log("Botón clickeado:", mensaje.id);
+    toggleAcordeon(mensaje.id);
+  }}
+  className="acordeon-button"
+/>
 
           {abierto === mensaje.id && (
             <div className="acordeon-content">
-              <ReverbCardWrapper id={mensaje.id} />
-            </div>
-          )}
+              <ReverbCard id={mensaje.id} />
+             </div>
+)}
+
         </div>
       ))}
     </div>
   );
 }
-
-// function ReverbCardWrapper({ id }) {
-//   // Mock useParams para ReverbCard
-//   const location = useLocation();
-//   const navigate = useNavigate();
-
-//   // Empuja un estado temporal en la URL para que ReverbCard pueda usar useParams
-//   useEffect(() => {
-//     const oldPath = location.pathname;
-//     const fakePath = `/mensaje/${id}`;
-//     window.history.pushState({}, '', fakePath);
-
-//     return () => {
-//       // Restaurar el path anterior al cerrar el acordeón
-//       window.history.pushState({}, '', oldPath);
-//     };
-//   }, [id]);
-
-//   return <ReverbCard />;
-// }
 
 export default CardMensaje;

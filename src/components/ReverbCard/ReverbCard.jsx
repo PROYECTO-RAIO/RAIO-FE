@@ -4,17 +4,23 @@ import { getMensajeOriginalById } from "../../service/ApiService";
 import renderAdjunto from "../../service/RenderAdjunto";
 import "../ReverbCard/ReverbCard.css";
 
-function ReverbCard() {
-  const { id } = useParams();
+function ReverbCard({ id: propId }) {
+  const params = useParams();
+  const id = propId || params.id; 
+
   const [mensajeOriginal, setMensajeOriginal] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchReverberacionesMensaje = async () => {
+      if (!id) {
+        console.warn("No se proporcionó un ID válido a ReverbCard");
+        return;
+      }
+
       try {
         const data = await getMensajeOriginalById(id);
         setMensajeOriginal(data);
-        console.log(data);
       } catch (error) {
         console.error("Error al cargar el mensaje original:", error);
       } finally {
@@ -24,6 +30,8 @@ function ReverbCard() {
 
     fetchReverberacionesMensaje();
   }, [id]);
+
+ 
   if (loading) return <p>Cargando mensaje...</p>;
   if (!mensajeOriginal) return <p>No se encontró el mensaje.</p>;
 
