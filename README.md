@@ -17,8 +17,6 @@ Características Principales:
 
 -Listado cronológico de mensajes.
 
--Filtros por fecha, autor o palabras clave.
-
 -Visualización de archivos multimedia adjuntos.
 
 -Vista de Reverberaciones
@@ -31,8 +29,6 @@ Características Principales:
 
 2. Experiencia de Usuario
 -Diseño responsive (mobile-first).
-
--Sistema de internacionalización (i18n).
 
 -Modo lectura accesible.
 
