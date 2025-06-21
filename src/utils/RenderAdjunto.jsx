@@ -19,7 +19,13 @@ const renderAdjunto = (adjunto) => {
 
   if (/\.(jpg|jpeg|png|gif)$/i.test(adjunto)) {
     return (
-      <img src={adjunto} alt="reverberacion" className="reverb-card-image" />
+      <img
+        width="100%"
+        height="315"
+        src={adjunto}
+        alt="reverberacion"
+        className="reverb-card-image"
+      />
     );
   }
 
