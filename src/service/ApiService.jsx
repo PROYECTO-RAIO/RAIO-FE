@@ -29,16 +29,34 @@ export const getMensajeOriginalById = async (id) => {
     const response = await axios.get(`${BASE_URL}/mensajes-originales/${id}`);
     return response.data;
   } catch (error) {
-    console.error("Error al obtener el mensaje original:", error);
+    console.error("Error al obtener el mensaje original", error);
     throw error;
   }
 };
 
-export const getAllMensajesOriginales = async() => {
+export const getAllMensajesOriginales = async () => {
   try {
     const responses = await axios.get(`${BASE_URL}/mensajes-originales`);
-    return responses.data
+    return responses.data;
   } catch (error) {
-    console.error("Error al obtener los mensajes originales", error)
+    console.error("Error al obtener los mensajes originales", error);
   }
-}
+};
+
+export const getAllCategorias = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/categorias`);
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener las categorías", error);
+  }
+};
+
+export const getCategoriaById = async (id) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/categorias/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log("Error al obtener la categoria por id", error);
+  }
+};
