@@ -48,6 +48,6 @@ export const getAllMensajesOriginales = async() => {
     const responses = await axios.get(`${BASE_URL}/mensajes-originales`);
     return responses.data
   } catch (error) {
-    console.error("Error al obtener los mensajes originales", error)
+   throw new Error("Error al obtener los mensajes originales", error);
   }
 };

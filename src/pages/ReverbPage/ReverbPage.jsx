@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./ReverbPage.css"
-import filterIcon from "../assets/lupa.png";
-
+import filterIcon from "../../assets/lupa.png";
+import ReverbCard from "../../components/ReverbCard/ReverbCard";
 
 function ReverbPage() {
   return (
@@ -16,8 +16,7 @@ function ReverbPage() {
           className="filter-icon"
         />
       </div>
-      <h1 className="reverb-page-title">REVERBERACIONES</h1>
-  
+      < ReverbCard />
     </section>
   );
 }
