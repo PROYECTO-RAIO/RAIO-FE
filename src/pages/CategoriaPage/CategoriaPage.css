@@ -1,1 +1,37 @@
+.homepage-link {
+  font-size: 2rem;
+  margin: 2%;
+}
 
+
+
+.categoria-page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-icon {
+  margin-right: 3%;
+}
+
+@media (max-width: 768px) {
+
+
+  .homepage-link {
+    font-size: 1.5rem;
+    margin: 5%;
+  }
+
+  .categoria-page-header {
+    padding: 0 5%;
+  }
+
+  .filter-icon {
+    width: 24px;
+    /* reduce tamaño si es muy grande */
+    height: auto;
+    margin-right: 0;
+  }
+}
