@@ -8,8 +8,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<DiarioPage />} />
-        <Route path="/mensaje-original/:id" element={<ReverbPage />} />
-        <Route  path="/categorias/:id" element={<CategoriaPage/>} />
+        <Route path="/mensaje-original/:id" element={<ReverbPage />} /> 
+        <Route path="/categorias/:id" element={<CategoriaPage />} />
       </Routes>
     </>
   );
