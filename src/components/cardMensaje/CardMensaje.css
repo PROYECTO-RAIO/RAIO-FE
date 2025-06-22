@@ -10,14 +10,15 @@
     justify-content: space-evenly;
     flex-direction: column;
 }
-
-.text {
-    align-self: flex-start;
-    padding-left: 1rem; 
+.text-container{ 
+    display: flex;
+    padding-left: 1rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
+
 .text-body{
-    font-size: 2rem;
-    margin-left: 0.5rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 .custom-button {
@@ -69,10 +70,25 @@
     justify-content: flex-start;
     margin-left: 2rem;
 }
+    .text-container{ 
+    display: flex;
+    padding-left: 1rem;
+    flex-direction: column;
+}
+    .text-body{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+
 .timestamp{
+    position: absolute;
     display:flex;
     align-self:end ;
-    margin-right:0.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    
 }
 
 

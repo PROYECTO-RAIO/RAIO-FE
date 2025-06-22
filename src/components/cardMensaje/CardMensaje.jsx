@@ -35,10 +35,11 @@ function CardMensaje() {
   <>
     <div key={mensaje.id} className="card-container">
       <p className="timestamp"> {mensaje.timestamp} </p>
+      <div className="text-container">
       <p className="text" > ASUNTO: {mensaje.asuntoMensajeOriginal} </p>
       <p className="text" > DE: {mensaje.autorMensajeOriginal} </p>
       <p className="text-body">{mensaje.cuerpoMensajeOriginal}</p>
-      
+      </div>
       
 
 
