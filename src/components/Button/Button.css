@@ -1,0 +1,28 @@
+.custom-button {
+  background-color: #1f3be9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-family: "DotGothic16", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.custom-button:hover {
+  background-color: #1730ba;
+}
+
+.custom-badge{
+  border-radius: 50%;
+  padding: 2px 9px;
+  background-color: white;
+  color: #1f3be9;
+  margin-left: 5px;
+}

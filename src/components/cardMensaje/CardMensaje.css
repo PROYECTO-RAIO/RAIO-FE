@@ -1,0 +1,95 @@
+.card-container {
+    position: relative;
+    display: flex;
+    height: 36vh;
+    width: 85vw;
+    border: 5px solid #1F3BE9;
+    border-radius: 20px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.text-container{ 
+    display: flex;
+    padding-left: 1rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.text-body{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.custom-button {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    height: 3vh;
+    width: 20vw;
+
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem; 
+    cursor: pointer;
+}
+
+.acordeon-content{
+  width: 85vw;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+
+}
+
+.timestamp{
+    display:flex;
+    align-self:end ;
+    margin-right:0.5rem;
+}
+
+
+@media (min-width: 768px) {
+    .card-container {
+        margin-left: 4rem;
+    }
+
+    .custom-button {
+        height: 4vh;
+        width: 10vw;
+    }
+
+
+    .acordeon-content{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-left: 2rem;
+}
+    .text-container{ 
+    display: flex;
+    padding-left: 1rem;
+    flex-direction: column;
+}
+    .text-body{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+
+.timestamp{
+    position: absolute;
+    display:flex;
+    align-self:end ;
+    top: 0.5rem;
+    right: 0.5rem;
+    
+}
+
+
+}
