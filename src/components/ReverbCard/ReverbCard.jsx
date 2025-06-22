@@ -33,7 +33,6 @@ function ReverbCard({ id: propId }) {
     fetchReverberacionesMensaje();
   }, [id]);
 
-  //NEW KAT
     useEffect(() => {
     const fetchCategorias = async () => {
       if (!mensajeOriginal?.mensajesReverberados) return;
@@ -60,7 +59,6 @@ function ReverbCard({ id: propId }) {
 
     fetchCategorias();
   }, [mensajeOriginal, categorias]);
-  //END
 
   if (loading) return <p>Cargando mensaje...</p>;
   if (!mensajeOriginal) return <p>No se encontró el mensaje.</p>;
@@ -80,16 +78,16 @@ function ReverbCard({ id: propId }) {
                   {renderAdjunto(reverb.adjunto)}
                 </div>
                 <p>{categoria?.tituloCategoria || "Sin categoría"}</p>
-{categoria ? (
-  <Button
-    text={categoria.tituloCategoria}
-    to={`/categorias/${categoria.id}`}
-    className="reverb-category-button"
-  />
-) : (
-  <span>Sin enlace</span>
-)}
-              </div>
+                  {categoria ? (
+                  <Button
+                    text={categoria.tituloCategoria}
+                    to={`/categorias/${categoria.id}`}
+                    className="reverb-category-button"
+                  />
+                  ) : (
+                    <span>Sin enlace</span>
+                  )}
+                </div>
             );
           })
         ) : (
