@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getMensajeOriginalById, getCategoriaById } from "../../service/ApiService";
 import renderAdjunto from "../../utils/RenderAdjunto";
-import Button from "../Button/Button";
 import "../ReverbCard/ReverbCard.css";
 
 function ReverbCard({ id: propId }) {
