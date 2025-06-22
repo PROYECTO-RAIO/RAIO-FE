@@ -79,11 +79,9 @@ function ReverbCard({ id: propId }) {
                 </div>
                 <p>{categoria?.tituloCategoria || "Sin categoría"}</p>
                   {categoria ? (
-                  <Button
-                    text={categoria.tituloCategoria}
-                    to={`/categorias/${categoria.id}`}
-                    className="reverb-category-button"
-                  />
+                  <Link to={`/categorias/${categoria.id}`}>
+                    {categoria.tituloCategoria}
+                  </Link>
                   ) : (
                     <span>Sin enlace</span>
                   )}
