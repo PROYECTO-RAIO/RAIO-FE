@@ -32,27 +32,28 @@ function CardMensaje() {
   return (
     <div className="lista-mensajes">
       {mensajes.map((mensaje) => (
-        <div key={mensaje.id} className="card-container">
-          <p className="text">{mensaje.cuerpoMensajeOriginal}</p>
+  <>
+    <div key={mensaje.id} className="card-container">
+      <p className="text">{mensaje.cuerpoMensajeOriginal}</p>
+      <p className="text"> {mensaje.autorMensajeOriginal} </p>
+      <p className="text"> {mensaje.asuntoMensajeOriginal} </p>
 
-          <Button
-            text={abierto === mensaje.id ? "Ocultar" : "Ver"}
-            onClick={() => {
-              console.log("Botón clickeado:", mensaje.id);
-              toggleAcordeon(mensaje.id);
-            }}
-            className="custom-button"
-          />
+      <Button
+        text={abierto === mensaje.id ? "Ocultar" : "Ver"}
+        onClick={() => toggleAcordeon(mensaje.id)}
+        className="custom-button"
+      />
+    </div>
 
-          {abierto === mensaje.id && (
-            <div className="acordeon-content">
-              <ReverbCard id={mensaje.id} />
-            </div>
-          )}
-        </div>
-      ))}
+    {abierto === mensaje.id && (
+      <div className="acordeon-content">
+        <ReverbCard id={mensaje.id} />
+      </div>
+    )}
+  </>
+  ))}
     </div>
   );
 }
 
-export default CardMensaje;
+export default CardMensaje; 
