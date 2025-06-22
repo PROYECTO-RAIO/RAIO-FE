@@ -76,7 +76,7 @@ function ReverbCard({ id: propId }) {
                 <div className="reverb-card-attachment">
                   {renderAdjunto(reverb.adjunto)}
                 </div>
-                <p>{categoria?.tituloCategoria || "Sin categoría"}</p>
+                
                   {categoria ? (
                   <Link to={`/categorias/${categoria.id}`}>
                     {categoria.tituloCategoria}
