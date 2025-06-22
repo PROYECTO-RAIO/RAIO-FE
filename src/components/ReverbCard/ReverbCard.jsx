@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getMensajeOriginalById } from "../../service/ApiService";
-import renderAdjunto from "../../service/RenderAdjunto";
+import renderAdjunto from "../../utils/RenderAdjunto";
 import "../ReverbCard/ReverbCard.css";
 
 function ReverbCard({ id: propId }) {
   const params = useParams();
-  const id = propId || params.id; 
+  const id = propId || params.id;
 
   const [mensajeOriginal, setMensajeOriginal] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -31,7 +31,6 @@ function ReverbCard({ id: propId }) {
     fetchReverberacionesMensaje();
   }, [id]);
 
- 
   if (loading) return <p>Cargando mensaje...</p>;
   if (!mensajeOriginal) return <p>No se encontró el mensaje.</p>;
 
@@ -47,9 +46,8 @@ function ReverbCard({ id: propId }) {
               <div className="reverb-card-attachment">
                 {renderAdjunto(reverb.adjunto)}
               </div>
-              <Link to={"/categorias"}>
-                <p> {reverb.categoria} </p>
-              </Link>
+              <p>{reverb.categoria?.tituloCategoria || "Sin categoría"}</p>
+              <Link to={`/categorias/${reverb.categoria}`}>{reverb.categoria}</Link>
             </div>
           ))
         ) : (

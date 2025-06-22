@@ -11,12 +11,20 @@
   margin-top: 5%;
 }
 
+
 .reverb-card {
   margin: 1em;
-  padding-left: 1em;
+  padding: 1em;
   border: solid #1F3BE9 4px;
   border-radius: 20px;
   width: fit-content;
+}
+
+.reverb-card p {
+
+  display: flex;
+  flex-direction: column;
+
 }
 
 .reverb-card-attachment {
