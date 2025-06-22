@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getMensajeOriginalById, getCategoriaById } from "../../service/ApiService";
 import renderAdjunto from "../../utils/RenderAdjunto";
+import Button from "../Button/Button";
 import "../ReverbCard/ReverbCard.css";
 
 function ReverbCard({ id: propId }) {
@@ -79,13 +80,15 @@ function ReverbCard({ id: propId }) {
                   {renderAdjunto(reverb.adjunto)}
                 </div>
                 <p>{categoria?.tituloCategoria || "Sin categoría"}</p>
-                {categoria ? (
-                  <Link to={`/categorias/${categoria.id}`}>
-                    {categoria.tituloCategoria}
-                  </Link>
-                ) : (
-                  <span>Sin enlace</span>
-                )}
+{categoria ? (
+  <Button
+    text={categoria.tituloCategoria}
+    to={`/categorias/${categoria.id}`}
+    className="reverb-category-button"
+  />
+) : (
+  <span>Sin enlace</span>
+)}
               </div>
             );
           })
