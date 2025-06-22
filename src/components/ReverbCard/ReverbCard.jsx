@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getMensajeOriginalById } from "../../service/ApiService";
+import { getMensajeOriginalById, getCategoriaById } from "../../service/ApiService";
 import renderAdjunto from "../../utils/RenderAdjunto";
 import "../ReverbCard/ReverbCard.css";
 
@@ -10,6 +10,7 @@ function ReverbCard({ id: propId }) {
 
   const [mensajeOriginal, setMensajeOriginal] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [categorias, setCategorias] = useState({});
 
   useEffect(() => {
     const fetchReverberacionesMensaje = async () => {
@@ -31,6 +32,35 @@ function ReverbCard({ id: propId }) {
     fetchReverberacionesMensaje();
   }, [id]);
 
+  //NEW KAT
+    useEffect(() => {
+    const fetchCategorias = async () => {
+      if (!mensajeOriginal?.mensajesReverberados) return;
+
+      const uniqueCategoriaIds = [
+        ...new Set(
+          mensajeOriginal.mensajesReverberados
+            .map((reverb) => reverb.categoria)
+            .filter((id) => id != null && !categorias[id])
+        ),
+      ];
+
+      await Promise.all(
+        uniqueCategoriaIds.map(async (catId) => {
+          try {
+            const catData = await getCategoriaById(catId);
+            setCategorias((prev) => ({ ...prev, [catId]: catData }));
+          } catch (e) {
+            console.error(`Error al cargar categoría con ID ${catId}`, e);
+          }
+        })
+      );
+    };
+
+    fetchCategorias();
+  }, [mensajeOriginal, categorias]);
+  //END
+
   if (loading) return <p>Cargando mensaje...</p>;
   if (!mensajeOriginal) return <p>No se encontró el mensaje.</p>;
 
@@ -38,18 +68,27 @@ function ReverbCard({ id: propId }) {
     <section>
       <div className="reverb-card-container">
         {mensajeOriginal.mensajesReverberados?.length > 0 ? (
-          mensajeOriginal.mensajesReverberados.map((reverb) => (
-            <div className="reverb-card" key={reverb.id}>
-              <p> {reverb.asunto} </p>
-              <p> {reverb.autor} </p>
-              <p className="reverb-card-body">{reverb.cuerpo}</p>
-              <div className="reverb-card-attachment">
-                {renderAdjunto(reverb.adjunto)}
+          mensajeOriginal.mensajesReverberados.map((reverb) => {
+            const categoria = categorias[reverb.categoria];
+            return (
+              <div className="reverb-card" key={reverb.id}>
+                <p>{reverb.asunto}</p>
+                <p>{reverb.autor}</p>
+                <p className="reverb-card-body">{reverb.cuerpo}</p>
+                <div className="reverb-card-attachment">
+                  {renderAdjunto(reverb.adjunto)}
+                </div>
+                <p>{categoria?.tituloCategoria || "Sin categoría"}</p>
+                {categoria ? (
+                  <Link to={`/categorias/${categoria.id}`}>
+                    {categoria.tituloCategoria}
+                  </Link>
+                ) : (
+                  <span>Sin enlace</span>
+                )}
               </div>
-              <p>{reverb.categoria?.tituloCategoria || "Sin categoría"}</p>
-              <Link to={`/categorias/${reverb.categoria}`}>{reverb.categoria}</Link>
-            </div>
-          ))
+            );
+          })
         ) : (
           <p>No hay reverberaciones todavía.</p>
         )}
