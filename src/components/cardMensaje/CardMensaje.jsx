@@ -29,37 +29,34 @@ function CardMensaje() {
     console.log("Mensajes para renderizar:", mensajes);
   };
 
-  return (
+   return (
     <div className="lista-mensajes">
       {mensajes.map((mensaje) => (
-  <>
-    <div key={mensaje.id} className="card-container">
-      <p className="timestamp"> {mensaje.timestamp} </p>
-      <div className="text-container">
-      <p className="text" > ASUNTO: {mensaje.asuntoMensajeOriginal} </p>
-      <p className="text" > DE: {mensaje.autorMensajeOriginal} </p>
-      <p className="text-body">{mensaje.cuerpoMensajeOriginal}</p>
-      </div>
-      
+        <div key={mensaje.id}>
+          <div className="card-container">
+            <p className="timestamp">{mensaje.timestamp}</p>
+            <div className="text-container">
+              <p className="text">ASUNTO: {mensaje.asuntoMensajeOriginal}</p>
+              <p className="text">DE: {mensaje.autorMensajeOriginal}</p>
+              <p className="text-body">{mensaje.cuerpoMensajeOriginal}</p>
+            </div>
 
+            <Button
+              text={abierto === mensaje.id ? "Ocultar" : "Reverb"}
+              onClick={() => toggleAcordeon(mensaje.id)}
+              className="custom-button"
+              count={mensaje.mensajesReverberados.length}
+            />
+          </div>
 
-      <Button
-        text={abierto === mensaje.id ? "Ocultar" : "Reverb"}
-        onClick={() => toggleAcordeon(mensaje.id)}
-        className="custom-button"
-        count={mensaje.mensajesReverberados.length}
-      />
-    </div>
-
-    {abierto === mensaje.id && (
-      <div className="acordeon-content">
-        <ReverbCard id={mensaje.id} />
-      </div>
-    )}
-  </>
-  ))}
+          {abierto === mensaje.id && (
+            <div className="acordeon-content">
+              <ReverbCard id={mensaje.id} />
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
-
 export default CardMensaje; 
