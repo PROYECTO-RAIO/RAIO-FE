@@ -12,10 +12,9 @@
 }
 
 .text {
-    align-self: center;
+    align-self: flex-start;
     padding-left: 1rem; 
 }
-
 .custom-button {
     position: absolute;
     bottom: 0.5rem;
