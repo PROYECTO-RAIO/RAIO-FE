@@ -15,9 +15,9 @@
 .reverb-card {
   margin: 1em;
   padding: 1em;
-  border: solid #1F3BE9 4px;
+  border: 5px solid #1F3BE9;
   border-radius: 20px;
-  width: fit-content;
+  width: 82vw;
 }
 
 .reverb-card p {

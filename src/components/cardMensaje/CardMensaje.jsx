@@ -35,9 +35,11 @@ function CardMensaje() {
   <>
     <div key={mensaje.id} className="card-container">
       <p className="timestamp"> {mensaje.timestamp} </p>
-      <p className="text">{mensaje.cuerpoMensajeOriginal}</p>
-      <p className="text"> {mensaje.autorMensajeOriginal} </p>
-      <p className="text"> {mensaje.asuntoMensajeOriginal} </p>
+      <p className="text" > ASUNTO: {mensaje.asuntoMensajeOriginal} </p>
+      <p className="text" > DE: {mensaje.autorMensajeOriginal} </p>
+      <p className="text-body">{mensaje.cuerpoMensajeOriginal}</p>
+      
+      
 
 
       <Button
