@@ -99,7 +99,7 @@ describe("ApiService", () => {
         errorMessage
       );
       expect(consoleErrorSpy).toHaveBeenCalledWith(
-        "Error al obtener el mensaje original:",
+        "Error al obtener el mensaje original",
         expect.any(Error)
       );
     });
