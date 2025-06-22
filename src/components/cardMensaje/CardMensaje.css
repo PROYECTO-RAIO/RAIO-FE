@@ -1,7 +1,7 @@
 .card-container {
     position: relative;
     display: flex;
-    height: 30vh;
+    height: 36vh;
     width: 85vw;
     border: 5px solid #1F3BE9;
     border-radius: 20px;
@@ -40,6 +40,12 @@
 
 }
 
+.timestamp{
+    display:flex;
+    align-self:end ;
+    margin-right:0.5rem;
+}
+
 
 @media (min-width: 768px) {
     .card-container {
@@ -58,4 +64,11 @@
     gap: 1rem;
     justify-content: flex-start;
 }
+.timestamp{
+    display:flex;
+    align-self:end ;
+    margin-right:0.5rem;
+}
+
+
 }

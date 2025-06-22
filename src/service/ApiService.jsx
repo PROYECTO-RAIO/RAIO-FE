@@ -60,3 +60,12 @@ export const getCategoriaById = async (id) => {
     console.log("Error al obtener la categoria por id", error);
   }
 };
+
+export const getTimestampById = async (id) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/mensajes-originales${id}`);
+    return response.data;
+  } catch (error) {
+    console.log("Error al obtener el timestamp por id", error);
+  }
+};

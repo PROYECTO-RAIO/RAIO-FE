@@ -34,9 +34,11 @@ function CardMensaje() {
       {mensajes.map((mensaje) => (
   <>
     <div key={mensaje.id} className="card-container">
+      <p className="timestamp"> {mensaje.timestamp} </p>
       <p className="text">{mensaje.cuerpoMensajeOriginal}</p>
       <p className="text"> {mensaje.autorMensajeOriginal} </p>
       <p className="text"> {mensaje.asuntoMensajeOriginal} </p>
+
 
       <Button
         text={abierto === mensaje.id ? "Ocultar" : "Ver"}
