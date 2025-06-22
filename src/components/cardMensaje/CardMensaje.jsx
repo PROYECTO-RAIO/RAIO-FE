@@ -34,6 +34,8 @@ function CardMensaje() {
       {mensajes.map((mensaje) => (
         <div key={mensaje.id} className="card-container">
           <p className="text">{mensaje.cuerpoMensajeOriginal}</p>
+          <p> {mensaje.autorMensajeOriginal} </p>
+          <p> {mensaje.asuntoMensajeOriginal} </p>
 
           <Button
             text={abierto === mensaje.id ? "Ocultar" : "Ver"}
@@ -55,4 +57,4 @@ function CardMensaje() {
   );
 }
 
-export default CardMensaje;
+export default CardMensaje; 

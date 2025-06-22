@@ -37,9 +37,6 @@ function ReverbCard({ id: propId }) {
 
   return (
     <section>
-      <h1 className="reverb-page-title">
-        {mensajeOriginal.asuntoMensajeOriginal}{" "}
-      </h1>
       <div className="reverb-card-container">
         {mensajeOriginal.mensajesReverberados?.length > 0 ? (
           mensajeOriginal.mensajesReverberados.map((reverb) => (
