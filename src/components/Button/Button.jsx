@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "./Button.css";
-function Button({ text, to, type = "button", className = "", onClick }) {
+function Button({ text, to, type = "button", className = "", onClick, count }) {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
@@ -16,6 +16,7 @@ function Button({ text, to, type = "button", className = "", onClick }) {
       onClick={handleClick}
     >
       {text}
+      {count > 0 && <span className="custom-badge">{count}</span>}
     </button>
   );
 }
@@ -26,6 +27,7 @@ Button.propTypes = {
   type: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func, 
+  count: PropTypes.string,
 };
 
 export default Button;

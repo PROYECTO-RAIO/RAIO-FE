@@ -41,9 +41,10 @@ function CardMensaje() {
 
 
       <Button
-        text={abierto === mensaje.id ? "Ocultar" : "Ver"}
+        text={abierto === mensaje.id ? "Ocultar" : "Reverb"}
         onClick={() => toggleAcordeon(mensaje.id)}
         className="custom-button"
+        count={mensaje.mensajesReverberados.length}
       />
     </div>
 

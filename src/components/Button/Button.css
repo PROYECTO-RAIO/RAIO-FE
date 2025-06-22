@@ -18,3 +18,11 @@
 .custom-button:hover {
   background-color: #1730ba;
 }
+
+.custom-badge{
+  border-radius: 50%;
+  padding: 2px 9px;
+  background-color: white;
+  color: #1f3be9;
+  margin-left: 5px;
+}
