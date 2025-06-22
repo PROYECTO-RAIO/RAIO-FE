@@ -1,17 +1,20 @@
 .custom-button {
-  background-color: #1F3BE9;
+  background-color: #1f3be9;
   color: white;
   border: none;
-  border-radius: 8px; 
-  padding: 0.5rem 1.5rem; 
-  font-size: 1rem; 
-  font-family: "DotGothic16", sans-serif; 
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-family: "DotGothic16", sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  display: inline-block;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .custom-button:hover {
-  background-color: #1730ba; 
+  background-color: #1730ba;
 }
