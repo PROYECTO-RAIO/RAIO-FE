@@ -1,18 +1,18 @@
 .card-container {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 15vh;
+    height: 30vh;
     width: 85vw;
     border: 5px solid #1F3BE9;
     border-radius: 20px;
     margin-left: 1rem;
     margin-bottom: 1rem;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .text {
-    align-self: flex-start;
+    align-self: center;
 }
 
 .custom-button {
